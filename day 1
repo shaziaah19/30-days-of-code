@@ -1,0 +1,27 @@
+Day 1
+07/05/23
+LEETCODE 2373. 
+Largest Local Values in a Matrix
+solution 
+
+class Solution {
+     
+    public int[][] largestLocal(int[][] grid) {
+     int n=grid.length;
+     int maxlocal[][]=new int [n-2][n-2];
+    for(int i=0;i<maxlocal.length;i++){
+for(int j=0;j< maxlocal[i].length;j++){
+    maxlocal[i][j]=findMax(grid,i,j);
+}
+    }
+    return maxlocal;
+}
+private int findMax(int [][]grid,int i,int j){
+    int max=Integer.MIN_VALUE;
+    for(int a=i;a<i+3;a++){
+        for(int b=j;b<j+3;b++){
+   max=Math.max(grid[a][b],max);
+        }
+    }
+    return max;
+}}
