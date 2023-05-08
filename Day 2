@@ -1,0 +1,34 @@
+Day 2
+08/05/23
+Leetcode 26. Remove Duplicates from Sorted Array
+Intuition
+Two pointer appproach to insert the unique elements in place .
+
+Approach
+first i=0 and j=0 we will increment i till we find nums[i]!=nums[j] then j++; nums[j]=nums[i]; so that the unique elements are inserted at the starting of the array. then we have to return a value which holds the no of unique elements our j is pointing to the last element of unique elements hence the length wouls j+1 .
+therefore return j+1;
+
+Complexity
+Time complexity:
+o(n)
+
+Space complexity:
+o(1)
+
+Code
+class Solution {
+    public int removeDuplicates(int[] nums) {
+       int i=0,j=0;
+       while(i<nums.length){
+           if(nums[i]==nums[j]){
+               i++;
+           }
+          else{
+              j++;
+              nums[j]=nums[i];
+          }
+       }
+    return j+1;
+    }
+   
+}
